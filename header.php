@@ -15,17 +15,21 @@
 		</div>
 		<div class="container">
 			<div class="wrapper">
-				<div class="nav_left">
-					<ul class="main-menu">
-						<li><a href="#">Home</a></li>
-						<li><a href="#">About</a></li>
-					</ul>
+				<div class="nav_left main-menu">
+					<?php wp_nav_menu( array(
+												'menu_class'=>'menu',
+						    					'theme_location'=>'top'
+											) 
+									);
+					?>
 				</div>
-				<div class="nav_right">
-					<ul class="main-menu">
-						<li><a href="#">Category</a></li>
-						<li><a href="#">Contact</a></li>
-					</ul>
+				<div class="nav_right main-menu">
+					<?php wp_nav_menu( array(
+												'menu_class'=>'menu',
+						    					'theme_location'=>'bottom'
+											) 
+									);
+					?>
 				</div>
 				<div class="clearfix"></div>
 			</div>
