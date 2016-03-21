@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title><?php bloginfo('name') ?><?php wp_title('|') ?></title>
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
 </head>
@@ -10,7 +10,7 @@
 	<header>
 		<div class="inside_h">
 			<div class="wrapper">
-				<img src="<?php echo get_template_directory_uri() ?>/images/logo.png" alt="logo">
+				<a href="\"><img src="<?php echo get_template_directory_uri() ?>/images/logo.png" alt="logo"></a>
 			</div>
 		</div>
 		<div class="container">
@@ -18,7 +18,8 @@
 				<div class="nav_left main-menu">
 					<?php wp_nav_menu( array(
 												'menu_class'=>'menu',
-						    					'theme_location'=>'top'
+						    					'theme_location'=>'top',
+						    					'exclude' => 112
 											) 
 									);
 					?>
