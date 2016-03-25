@@ -1,6 +1,6 @@
 	<footer>
 		<div class="wrapper">
-			<?php nav(); ?>
+			<!-- <?php nav(); ?> -->
 			<p class="copy">Copyright (c) <span>Fikristudio</span> 2014</p>
 		</div>
 	</footer>

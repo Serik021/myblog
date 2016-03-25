@@ -6,21 +6,6 @@
 	}
 	add_action('wp_enqueue_scripts', 'my_theme_load_resources');
 
-	// ENQUEUE SCRIPTS
-	     
-	function enqueue_scripts() {
-	     
-	    /** REGISTER HTML5 Shim **/
-	    wp_register_script( 'html5-shim', 'http://html5shim.googlecode.com/svn/trunk/html5.js', array( 'jquery' ), '1', false );
-	    wp_enqueue_script( 'html5-shim' );
-	         
-	    /** REGISTER HTML5 OtherScript.js **/
-	    wp_register_script( 'custom-script', THEME_DIR . '/js_path/customscript.js', array( 'jquery' ), '1', false );
-	    wp_enqueue_script( 'custom-script' );
-	         
-	}
-	add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
-
 	register_nav_menus(array(
 		'top'    => 'Верхнее меню',    //Название месторасположения меню в шаблоне
 		'bottom' => 'Нижнее меню'      //Название другого месторасположения меню в шаблоне
@@ -48,5 +33,53 @@
 		if ($max > 1) echo '</div>';
 	}
 
-
+	function true_load_posts(){
+	    $args = unserialize(stripslashes($_POST['query']));
+	    $args['paged'] = $_POST['page'] + 1; // следующая страница
+	    $args['post_status'] = 'publish';
+	    $q = new WP_Query($args);
+	    if( $q->have_posts() ):
+	        while($q->have_posts()): $q->the_post(); 
+	?>
+	<div class="post">
+		<div class="left_block">
+			<p class="date"><?php echo get_the_date('j M'); ?></p>
+		</div>
+		<div class="right_block">
+			<div class="top_right">
+				<ul class="indi">
+					<!-- <li>cat: <span>Diary , Personal</span></li> -->
+					<li>cat:
+						<?php the_category(', '); ?>
+					</li>
+					<li><img src="<?php echo get_template_directory_uri() ?>/images/sideline.jpg" alt="sideline" class="sideline"></li>
+					<li>
+						<img src="<?php echo get_template_directory_uri() ?>/images/heart.png" alt="heart">
+						136 Likes
+					</li>
+					<li><img src="<?php echo get_template_directory_uri() ?>/images/sideline.jpg" alt="sideline" class="sideline"></li>
+					<li>
+						<img src="<?php echo get_template_directory_uri() ?>/images/comment.png" alt="comment">
+						21 Comments
+					</li>
+				</ul>
+			</div>
+			<div class="bottom_right">
+				<h1><a href="<?php the_permalink(); ?>" class="tit"><?php the_title(); ?></a></h1>
+				<?php the_post_thumbnail(array(350), array('class' => 'thumb_left img-responsive')); ?>
+				<p>	
+					<?php the_content(''); ?>
+				</p>
+				<a href="<?php the_permalink(); ?>">Read More</a>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<?php
+	endwhile; endif;
+	    wp_reset_postdata();
+	    die();
+	}
+	add_action('wp_ajax_loadmore', 'true_load_posts');
+	add_action('wp_ajax_nopriv_loadmore', 'true_load_posts');
  ?>

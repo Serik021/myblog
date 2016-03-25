@@ -5,6 +5,8 @@
 	<title><?php bloginfo('name') ?><?php wp_title('|') ?></title>
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="<?php echo get_template_directory_uri() ?>/moreload.js"></script>
 </head>
 <body>
 	<header>

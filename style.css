@@ -107,7 +107,7 @@ img[alt="logo"] {
 
 .indi {
 	border-bottom: 1px solid #afafaf;
-	padding: 16px 0;
+	padding: 12px 0;
 	position: relative;
 	font-size: 14px;
 }
@@ -117,7 +117,7 @@ img[alt="logo"] {
 	top: 2px;
 }
 
-.indi li:first-child {
+.indi > li:first-child {
 	margin-top: 12px;
 	margin-left: 13px;
 }
@@ -134,15 +134,37 @@ img[alt="logo"] {
 
 .indi .sideline {
 	position: absolute;
-	top: 23px;
+	top: 20px;
 }
 
-h1 {
+.indi li a {
+	text-decoration: none;
+	color: #3eb3a5;
+}
+
+.indi li a:hover {
+	text-decoration: underline;
+}
+
+.post-categories {
+	margin: 0;
+	padding: 0;
+	display: inline-block; 
+}
+
+.post-categories li {
+	padding: 0;
+	margin: 0;
+}
+
+.bottom_right h1 .tit {
 	color: #272727;
 	font-size: 30px;
-	line-height: 30px;
+	line-height: 0px;
 	font-weight: bold;
-	padding: 25px 0;
+	padding: 0px 0;
+	border: none;
+	margin-bottom: 30px;
 }
 
 .thumb_left {
@@ -170,6 +192,21 @@ h1 {
 	padding: 7px 0;
 	margin-top: 17px;
 	border-bottom: 1px solid #e1e1e1;
+}
+
+.bottom_right .tag {
+	margin-top: 25px;
+	margin-bottom: 30px;
+	font-size: 18px;
+	color: #1f1f1f;
+	font-weight: bold;
+	line-height: 24px;
+	text-transform: uppercase;
+}
+
+.tag a {
+	text-transform: none;
+	border: none !important;
 }
 
 .between {
@@ -517,6 +554,263 @@ footer {
 
 }
 
+
+/* ------------- COMMENTS STARTS ------------- */
+
+
 #reply-title {
-	font-size: 25px;
+	font-size: 24px;
+	line-height: 24px;
+	font-weight: bold;
+	color: #1f1f1f;
+	text-align: center;
 }
+
+#commentform {
+	text-align: center;
+	padding: 0 150px;
+	position: relative;
+}
+
+#author, #email {
+	font-size: 16px;
+	outline: none;
+	color: #888b8b;
+	border: none;
+	width: 190px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	height: 50px;
+	padding-left: 17px;  
+	background: #ebebeb;
+	position: relative;
+	left: 10px;
+}
+
+#author {
+	
+}
+
+#email {
+	float: left;
+	margin-left: 15px;
+}
+
+#comment {
+	font-size: 16px;
+	outline: none;
+	color: #888b8b;
+	border: none;
+	width: 400px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	height: 190px;
+	padding-left: 17px;  
+	padding-top: 17px;  
+	background: #ebebeb;
+	margin-top: 15px;
+}
+
+.comment-form-author {
+	float: left;
+}
+
+.comment-form-author label {
+	font-size: 12px;
+	line-height: 50px;
+	color: #8e8e8e;
+	font-weight: bold;
+	margin-right: 0px;
+}
+
+.comment-form-email {
+	float: left;
+}
+
+.comment-form-email label {
+	line-height: 54px;
+	font-size: 12px;
+	line-height: 50px;
+	color: #8e8e8e;
+	font-weight: bold;
+	position: absolute;
+	right: 130px;
+}
+
+.comment-form-comment {
+	margin-bottom: 15px;
+}
+
+.comment-form-comment label {
+	font-size: 12px;
+	color: #8e8e8e;
+	font-weight: bold;
+	position: absolute;
+	left: 135px;
+	top: 80px;
+	clear: both;
+	float: left;
+}
+
+#submit {
+	width: 400px;
+	height: 50px;
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	background: #3eb3a5;
+	border: none;
+	border-radius: 5px;
+	margin: 0 auto;
+}
+
+.count_comm {
+	margin-bottom: 37px;
+	font-size: 24px;
+	line-height: 24px;
+	font-weight: bold;
+	color: #1f1f1f;
+	float: left;
+}
+
+.vcard {
+	margin-top: 40px;
+}
+
+.comment-respond {
+	padding-bottom: 40px;
+	border-bottom: 2px solid #eaeaea;
+}
+
+.comment-meta {
+	display: none;
+}
+
+.comment {
+	list-style: none;
+}
+
+.avatar {
+	width: 115px;
+	height: 115px;
+	border-radius: 50%;
+	background: #eaeaea;
+}
+
+/* ------------- COMMENTS END ------------- */
+
+
+/* ------------- LOAD ANIMATION START ------------- */
+
+.line_bot {
+	border: 1px solid #ebebeb;
+	clear: both;
+}
+
+.nextStor a {
+	float: right;
+	padding: 0px 25px;
+	height: 44px;
+	display: block;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	background: #3eb3a5;
+	line-height: 40px;
+	margin-top: -10px;
+	border-radius: 5px;
+}
+
+#load_more_gs{
+width: 53px;
+padding:50px 0;
+margin:0 auto;
+}
+ 
+.cssload-container{
+    position:relative;
+}
+     
+.cssload-whirlpool,
+.cssload-whirlpool::before,
+.cssload-whirlpool::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid rgb(255,255,255);
+    border-left-color: rgb(0,225,255);
+    border-radius: 974px;
+        -o-border-radius: 974px;
+        -ms-border-radius: 974px;
+        -webkit-border-radius: 974px;
+        -moz-border-radius: 974px;
+}
+ 
+.cssload-whirlpool {
+    margin: -24px 0 0 -24px;
+    height: 49px;
+    width: 49px;
+    animation: cssload-rotate 1150ms linear infinite;
+        -o-animation: cssload-rotate 1150ms linear infinite;
+        -ms-animation: cssload-rotate 1150ms linear infinite;
+        -webkit-animation: cssload-rotate 1150ms linear infinite;
+        -moz-animation: cssload-rotate 1150ms linear infinite;
+}
+ 
+.cssload-whirlpool::before {
+    content: "";
+    margin: -22px 0 0 -22px;
+    height: 43px;
+    width: 43px;
+    animation: cssload-rotate 1150ms linear infinite;
+        -o-animation: cssload-rotate 1150ms linear infinite;
+        -ms-animation: cssload-rotate 1150ms linear infinite;
+        -webkit-animation: cssload-rotate 1150ms linear infinite;
+        -moz-animation: cssload-rotate 1150ms linear infinite;
+}
+ 
+.cssload-whirlpool::after {
+    content: "";
+    margin: -28px 0 0 -28px;
+    height: 55px;
+    width: 55px;
+    animation: cssload-rotate 2300ms linear infinite;
+        -o-animation: cssload-rotate 2300ms linear infinite;
+        -ms-animation: cssload-rotate 2300ms linear infinite;
+        -webkit-animation: cssload-rotate 2300ms linear infinite;
+        -moz-animation: cssload-rotate 2300ms linear infinite;
+}
+ 
+ 
+ 
+@keyframes cssload-rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+ 
+@-o-keyframes cssload-rotate {
+    100% {
+        -o-transform: rotate(360deg);
+    }
+}
+ 
+@-ms-keyframes cssload-rotate {
+    100% {
+        -ms-transform: rotate(360deg);
+    }
+}
+ 
+@-webkit-keyframes cssload-rotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+ 
+@-moz-keyframes cssload-rotate {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+/* ------------- LOAD ANIMATION END ------------- */

@@ -30,7 +30,8 @@
                         'id_form'              => 'commentform',
                         'id_submit'            => 'submit',
                         'comment_notes_before' => '',
-                        'submit_button'        => '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="POST" />'
+                        'submit_button'        => '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="POST" />',
+                        'logged_in_as'         => ''
 
                 )
 
